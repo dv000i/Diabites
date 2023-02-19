@@ -3,5 +3,5 @@ numpy
 scikit-learn
 matplotlib
 flask
-flaskgger
+flasgger
 gunicorn
