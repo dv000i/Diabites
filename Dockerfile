@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:4.4.0
+FROM continuumio/anaconda
 COPY . /app
 WORKDIR /app
 RUN pip install -r req.txt
