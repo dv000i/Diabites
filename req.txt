@@ -1,7 +1,11 @@
-python3
+
 pandas
 numpy 
 scikit-learn
+svm
+SVC
+
+
 matplotlib
 flask
 flasgger
