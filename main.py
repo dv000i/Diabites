@@ -10,7 +10,7 @@ with open("diabites.pickle", 'rb') as f:
     classifier = pickle.load(f)
 
 
-@app.route("/predict", methods=["GET"])
+@app.route('/Predict', methods=["GET"])
 def Predict():
     """ Check Present of diabities
         This is using docstrings for specifications.
@@ -28,7 +28,7 @@ def Predict():
             in: query
             type: number
             required: true
-          - name: height
+          - name: Age
             in: query
             type: number
             required: true
@@ -39,16 +39,12 @@ def Predict():
 
         """
 
+    pre = request.args.get('Pregnancies')
+    glu = request.args.get('Glucose')
+    bp = request.args.get('BloodPressure')
+    age = request.args.get('Age')
 
-
-    Pre = request.args.get('Pregnancies')
-    Glu = request.args.get('Glucose')
-    Bp = request.args.get('BloodPressure')
-    Age = request.args.get('Age')
-
-
-
-    prediction = classifier.predict([[Pre, Glu, Bp,Age]])
+    prediction = classifier.predict([[pre, glu, bp, age]])
 
     if prediction == 1:
         return "You have Diabities"
@@ -62,4 +58,4 @@ def welcomwe():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port='8080')
+    app.run()
